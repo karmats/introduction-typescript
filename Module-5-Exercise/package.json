@@ -1,0 +1,12 @@
+{
+    "name": "Module-5-Exercise",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-cli": "~0.1.13",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-typescript": "~0.6.1",
+        "typescript": "~1.4.1"
+    },
+    "private": true
+}
