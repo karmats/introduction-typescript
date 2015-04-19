@@ -2,3 +2,5 @@
 web.config
 node_modules/
 Module-5-Exercise/scripts/*.js
+Module_6_Exercise/CookBook/scripts/*.js
+Module_6_Exercise/CookBook/scripts/*.map
