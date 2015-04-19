@@ -4,7 +4,10 @@ module.exports = function(grunt) {
         // Compile typescripts
         typescript: {
             compile: {
-                src: ['scripts/**/*.ts']
+                src: ['scripts/**/*.ts'],
+                options: {
+                    target: 'es5'
+                }
             }
         },
         
