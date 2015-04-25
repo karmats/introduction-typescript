@@ -1,4 +1,4 @@
-﻿var recipeCategories: RecipeCategories;
+var recipeCategories: RecipeCategories;
 var renderer = null;
 
 window.onload = () => { 
@@ -10,17 +10,21 @@ window.onload = () => {
     //invokes the "loadRecipes" function that you'll see below. 
     //The lambda parentheses will be empty.
     //HINT: Refer to Module 4:Functions if you need help writing the lambda.
-    categoriesSelect.onchange = 
+    categoriesSelect.onchange = () => {
+        loadRecipes();
+    }
 
     //FROM MODULE 6
     //Create a new RecipeLoader instance and name it "loader".
     //Pass the following string into the RecipeLoader's constructor:
     //  '/JSON/recipeTypes.json'
     //HINT: Use the "new" keyword to create the instance.
+    var loader = new RecipeLoader('/JSON/recipeTypes.json');
 
     //FROM MODULE 6 
     //Call the loader object's load() function ("loader" is the object 
     //you created in the previous TODO)
+    loader.load();
 
     renderer = new Renderer();
 };
