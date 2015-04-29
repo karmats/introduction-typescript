@@ -1,8 +1,8 @@
-﻿//FROM MODULE 7&8:
+//FROM MODULE 7&8:
 //Modify the class below so that it implements the IExample interface
 //and the constructor accepts a parameter typed as IExample.
 
-class Example {
+class Example implements IExample {
     name: string;
     ingredients: Ingredient[] = [];
     prepTime: string; 

@@ -1,4 +1,4 @@
-﻿/// <reference path="typings/jquery.d.ts" />
+/// <reference path="typings/jquery.d.ts" />
 
 class RecipeLoader {
     constructor(public url: string) {}
@@ -15,11 +15,12 @@ class RecipeLoader {
             //TODO
             //Change RecipeCategories to use the new generic type.
             //Pass IRecipeCategory as the type
-            recipeCategories = new RecipeCategories();
+            recipeCategories = new RecipeCategories<IRecipeCategory>();
 
             //TODO
             //Create a new RecipeCategories object named recipeCategoriesSummary
             //and pass an IRecipeCategorySummary as the generic value.
+            var recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
             
             categories.forEach((category) => {
                 var recipeCategory = new RecipeCategory({
@@ -37,7 +38,11 @@ class RecipeLoader {
                 //object's items collection
                 //HINT: The constructor object passed must match the IRecipeCategorySummary interface
                 //HINT: Use the push() function
-                
+                var recipeCategorySummary = new RecipeCategorySummary({
+                    text: category.title, 
+                    title: category.details
+                });
+                recipeCategoriesSummary.items.push(recipeCategorySummary);
             });
             
             //Render the categories into the select
