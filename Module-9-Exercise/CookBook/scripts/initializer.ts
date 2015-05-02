@@ -1,4 +1,4 @@
-var recipeCategories: RecipeCategories<IRecipeCategory>;
+var recipeCategories: RecipeData.RecipeCategories<RecipeData.IRecipeCategory>;
 var renderer = null;
 
 window.onload = () => { 
@@ -19,7 +19,7 @@ window.onload = () => {
     //Pass the following string into the RecipeLoader's constructor:
     //  '/JSON/recipeTypes.json'
     //HINT: Use the "new" keyword to create the instance.
-    var loader = new RecipeLoader('/JSON/recipeTypes.json');
+    var loader = new RecipeData.RecipeLoader('/JSON/recipeTypes.json');
 
     //FROM MODULE 6 
     //Call the loader object's load() function ("loader" is the object 
@@ -36,7 +36,7 @@ function loadRecipes() {
             //Find selected item by name
             .filter(item => item.name === el.value)
             //return the item
-            .reduce(item => new RecipeCategory({
+            .reduce(item => new RecipeData.RecipeCategory({
                 name: el.value,
                 foodGroups: item.foodGroups,
                 description: item.description,
