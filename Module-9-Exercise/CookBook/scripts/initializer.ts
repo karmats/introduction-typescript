@@ -1,7 +1,14 @@
-var recipeCategories: RecipeData.RecipeCategories<RecipeData.IRecipeCategory>;
-var renderer = null;
+import interfaces = require('interfaces');
+import recCategory = require('recipeCategory')
+import recLoader = require('recipeLoader');
+import render = require('renderer');
+import recCat = require('recipeCategories');
 
-window.onload = () => { 
+export var recipeCategories: recCat.RecipeCategories<interfaces.IRecipeCategory>;
+export var renderer;
+
+(() => {
+    console.log('ONLOAD!');
     var categoriesSelect = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
 
     //FROM MODULE 6
@@ -19,35 +26,30 @@ window.onload = () => {
     //Pass the following string into the RecipeLoader's constructor:
     //  '/JSON/recipeTypes.json'
     //HINT: Use the "new" keyword to create the instance.
-    var loader = new RecipeData.RecipeLoader('/JSON/recipeTypes.json');
+    var loader = new recLoader.RecipeLoader('/JSON/recipeTypes.json');
 
     //FROM MODULE 6 
     //Call the loader object's load() function ("loader" is the object 
     //you created in the previous TODO)
     loader.load();
 
-    renderer = new Renderer();
-};
+    renderer = new render.Renderer();
 
-function loadRecipes() {
-    var el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
-    try {
-        var category = recipeCategories.items
-            //Find selected item by name
-            .filter(item => item.name === el.value)
-            //return the item
-            .reduce(item => new RecipeData.RecipeCategory({
-                name: el.value,
-                foodGroups: item.foodGroups,
-                description: item.description,
-                examples: item.examples
-            }));
-        renderer.renderCategory(category);
+    var loadRecipes = function() {
+        var el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
+        try {
+            var category = recipeCategories.items
+                //Find selected item by name
+                .filter(item => item.name === el.value)
+                //return the item
+                .reduce(item => new recCategory.RecipeCategory({
+                    name: el.value,
+                    foodGroups: item.foodGroups,
+                    description: item.description,
+                    examples: item.examples
+                }));
+            renderer.renderCategory(category);
+        }
+        catch (ex) { alert(ex.message) }
     }
-    catch (ex) { alert(ex.message) }
-}
-  
-
-
-
-
+})();

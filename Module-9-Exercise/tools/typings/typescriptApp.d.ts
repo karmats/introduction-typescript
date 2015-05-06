@@ -16,6 +16,9 @@
 /// <reference path="../../CookBook/scripts/interfaces.ts" />
 	
 
+/// <reference path="../../CookBook/scripts/main.ts" />
+	
+
 /// <reference path="../../CookBook/scripts/recipeCategories.ts" />
 	
 
@@ -35,6 +38,9 @@
 	
 
 /// <reference path="../../CookBook/scripts/typings/jquery.d.ts" />
+	
+
+/// <reference path="../../CookBook/scripts/typings/require.d.ts" />
 	
 
 //}
