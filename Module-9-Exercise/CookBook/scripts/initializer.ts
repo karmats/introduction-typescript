@@ -8,7 +8,6 @@ export var recipeCategories: recCat.RecipeCategories<interfaces.IRecipeCategory>
 export var renderer;
 
 (() => {
-    console.log('ONLOAD!');
     var categoriesSelect = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
 
     //FROM MODULE 6

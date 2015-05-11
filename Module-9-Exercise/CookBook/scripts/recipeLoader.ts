@@ -13,6 +13,7 @@ export class RecipeLoader {
 
     load() {
         $.getJSON(this.url,(data) => {
+            console.log(data);
             this.mapData(data);        
         });
     }

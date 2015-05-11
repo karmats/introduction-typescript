@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
-    <link href="styles/app.css" rel="stylesheet" />
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="row">
@@ -18,7 +17,13 @@
         </div>
     </div>
 
-
-    <div id="content"></div>
+    <h3>Painter name</h3>
+    <div>
+        <select id="PainterName">
+            <option disabled>Choose a painter. . .</option>
+        </select>
+    </div>
+    <script src="scripts/libs/jquery-1.11.2.js"></script>
+    <script data-main="scripts/main" src="scripts/libs/require.js"></script>
 </body>
 </html>
